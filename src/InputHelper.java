@@ -1,6 +1,4 @@
 
-import com.sun.xml.internal.fastinfoset.tools.XML_SAX_StAX_FI;
-
 import java.util.Scanner;
 
 public class InputHelper {
@@ -46,5 +44,21 @@ public class InputHelper {
             return x;
     }
 
+    public static String getRegExString(Scanner in, String prompt, String regEx) {
+        boolean done = false;
+        String input;
+        do {
+            System.out.println(prompt);
+            input = in.nextLine();
+            if (input.matches(regEx)) {
+                done = true;
+            } else {
+                System.out.println("Invalid Input.");
+            }
+
+        } while(!done);
+        return input;
+
+    }
 
 }
