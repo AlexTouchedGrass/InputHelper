@@ -3,13 +3,18 @@ import java.util.Scanner;
 public class InputHelper {
     public static void main(String[] args) {
         //Test Methods
-        Scanner scan = new Scanner(System.in);          //NEED TO FIX BELOW CODE
+        Scanner scan = new Scanner(System.in);
 
         //Size Checker
         System.out.println(getInt(scan, "Please enter your size.")); //Results are confidential.
 
         //Range Checker
-        System.out.println(getRangedInt(scan,"Please enter an int between 1 and 10.",1,10));
+        int iRange = getRangedInt(scan,"Please enter an int between 1 and 10.",1,10);
+        System.out.println("Your number is " + iRange);
+
+        //Double Range Checker
+        double dRange = getDoubleRangedInt(scan, "Please enter a double between 1 and 10",1,10);
+        System.out.println(getDoubleRangedInt(scan,"Please enter an double between 1 and 10.",1,10));
 
         //Social Security Check
         String ssn = getRegExString(scan, "Please enter your SSN [xxx-xx-xxxx]", "\\d{3}-\\d{2}-\\d{4}");
@@ -72,5 +77,23 @@ public class InputHelper {
         return input;
 
     }
+
+    public static double getDoubleRangedInt(Scanner in, String prompt, double min, double max){
+        boolean done = false;
+        double dx = 0;
+        do{
+            System.out.println(prompt);
+            if(in.hasNextDouble()){
+                dx = in.nextInt();
+                //Check to see if number is in range
+                if (dx<= max && dx >= min) {
+                    done = true;
+                }
+                done = true;
+            }
+        }while(!done);
+        return dx;
+    }
+
 
 }
