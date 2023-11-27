@@ -1,11 +1,23 @@
-
 import java.util.Scanner;
 
 public class InputHelper {
     public static void main(String[] args) {
         //Test Methods
-        Scanner scan = new Scanner(System.in);
-        System.out.println(getInt(scan,"Please enter an int between 1 and 10.",1,10));
+        Scanner scan = new Scanner(System.in);          //NEED TO FIX BELOW CODE
+
+        //Size Checker
+        System.out.println(getInt(scan, "Please enter your size.")); //Results are confidential.
+
+        //Range Checker
+        System.out.println(getRangedInt(scan,"Please enter an int between 1 and 10.",1,10));
+
+        //Social Security Check
+        String ssn = getRegExString(scan, "Please enter your SSN [xxx-xx-xxxx]", "\\d{3}-\\d{2}-\\d{4}");
+        System.out.println("Your SSN: " + ssn);
+
+        //Date Of Birth Check
+        String dob = getRegExString(scan, "Enter your date of birth [mm.dd.yyyy]","\\d{2}\\d{2}\\d{4}");
+        System.out.println("Your date of birth is " + dob);
 
 
     }
