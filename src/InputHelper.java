@@ -90,7 +90,6 @@ public class InputHelper {
                     if (x<= max && x >= min) {
                         done = true;
                  }
-                done = true;
             }
                 in.nextLine(); //buffer
             } while (!done);
