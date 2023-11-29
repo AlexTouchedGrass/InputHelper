@@ -38,7 +38,8 @@ public class InputHelper {
         System.out.println("Your string is " + non0Int + ".");
 
         //Y or N Confirm
-        String yesOrNo = get
+        String yesOrNo = getYNConfirm(scan, "Would you like to stop? Yes to stop, no to continue. ( Y or N also works)");
+        System.out.println("You answered " + yesOrNo + ".");
 
     }
 
@@ -162,6 +163,22 @@ public class InputHelper {
                 done = true;
             } else {
                 System.out.println("Error. Either a negative integer or 0 has been entered.");
+            }
+        }while(!done);
+        return input;
+    }
+
+    public static String getYNConfirm(Scanner in, String prompt){
+        boolean done = false;
+        String input;
+
+        System.out.println(prompt);
+        do{
+            input = in.nextLine();
+            if(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y")){
+                done = true;
+            } else if (input.equalsIgnoreCase("no") || input.equalsIgnoreCase("n")) {
+                System.out.println("You will continue.");
             }
         }while(!done);
         return input;
