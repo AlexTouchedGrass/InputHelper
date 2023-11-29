@@ -147,6 +147,7 @@ public class InputHelper {
                 } else {
                 System.out.println("Error. Blank Space Detected.");
             }
+            in.nextLine();
         }while(!done);
         return input;
     }
@@ -164,6 +165,7 @@ public class InputHelper {
             } else {
                 System.out.println("Error. Either a negative integer or 0 has been entered.");
             }
+            in.nextLine();
         }while(!done);
         return input;
     }
@@ -180,6 +182,7 @@ public class InputHelper {
             } else if (input.equalsIgnoreCase("no") || input.equalsIgnoreCase("n")) {
                 System.out.println("You will continue.");
             }
+            in.nextLine();
         }while(!done);
         return input;
     }
