@@ -177,9 +177,11 @@ public class InputHelper {
         do{
             input = in.nextLine();
             if(input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y")){
+                System.out.println("You will stop.");
                 done = true;
             } else if (input.equalsIgnoreCase("no") || input.equalsIgnoreCase("n")) {
                 System.out.println("You will continue.");
+                done = true;
             }
             in.nextLine();
         }while(!done);
