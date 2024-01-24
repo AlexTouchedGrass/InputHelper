@@ -188,4 +188,31 @@ public class InputHelper {
         return input;
     }
 
+    //PRETTY HEADER
+    public static void getPrettyHeader(String msg) {
+        int leftSpaces = ((54-msg.length())/2);
+        int rightSpaces = (54-leftSpaces-msg.length());
+
+        printCharacter("*", 60, true);
+
+        printCharacter("*",3, false);
+        printCharacter(" ", leftSpaces, false);
+        System.out.print(msg);
+        printCharacter(" ", rightSpaces, false);
+        printCharacter("*", 3, true);
+
+        printCharacter("*", 60, false);
+    }
+
+
+        //PRINT CHARACTER (MADE FOR PRETTY HEADER)
+    public static void printCharacter(String character, int amount, boolean newLine) {
+        for (int i = 0; i < amount; i++) {
+            System.out.print(character);
+        }
+
+        if (newLine) {
+            System.out.println();
+        }
+    }
 }
